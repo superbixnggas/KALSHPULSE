@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    --background: #0a0a0f;
+    --background-secondary: #111118;
+    --background-tertiary: #1a1a24;
+    --foreground: #e5e5e5;
+    --foreground-muted: #a0a0a0;
+    --neon-green: #00ff88;
+    --neon-purple: #8b5cf6;
+    --border: #2a2a36;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-image: 
+      radial-gradient(ellipse at top, rgba(139, 92, 246, 0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(0, 255, 136, 0.03) 0%, transparent 50%);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-border rounded-lg;
+  }
+
+  .glow-text {
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5), 0 0 20px rgba(0, 255, 136, 0.3);
+  }
+
+  .status-opportunity {
+    @apply text-status-opportunity bg-status-opportunity/10 border-status-opportunity/30;
+  }
+
+  .status-balanced {
+    @apply text-status-balanced bg-status-balanced/10 border-status-balanced/30;
+  }
+
+  .status-risk {
+    @apply text-status-risk bg-status-risk/10 border-status-risk/30;
+  }
+
+  .btn-primary {
+    @apply bg-neon-green font-semibold px-6 py-3 rounded-lg 
+           hover:bg-neon-green/90 transition-all duration-200
+           shadow-[0_0_20px_rgba(0,255,136,0.3)] hover:shadow-[0_0_30px_rgba(0,255,136,0.5)];
+    color: #0a0a0f;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border border-neon-purple text-neon-purple font-semibold px-6 py-3 rounded-lg
+           hover:bg-neon-purple/10 transition-all duration-200;
+  }
+
+  .data-card {
+    @apply bg-background-secondary border border-border rounded-lg p-4
+           hover:border-neon-green/30 transition-all duration-300;
+  }
+
+  .chart-container {
+    @apply bg-background-secondary/50 backdrop-blur-sm border border-border rounded-lg p-4;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-neon-green to-neon-purple;
+  }
+
+  .grid-bg {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111118;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2a36;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a46;
+}
+
+/* Selection */
+::selection {
+  background: rgba(0, 255, 136, 0.3);
+  color: #ffffff;
+}
