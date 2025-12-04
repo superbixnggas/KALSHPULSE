@@ -1,7 +1,21 @@
 {
-  "name": "react_repo",
+  "name": "kalshi-pulse",
+  "description": "Prediction Market Analytics Platform - AI-powered insights for Kalshi prediction markets",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/superbixnggas/KALSHPULSE.git"
+  },
+  "keywords": [
+    "prediction-market",
+    "analytics",
+    "ai",
+    "kalshi",
+    "react",
+    "typescript",
+    "supabase"
+  ],
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "pnpm install --prefer-offline && vite",
